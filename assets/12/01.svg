@@ -1,0 +1,65 @@
+<svg width="400" height="400" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect width="400" height="400" fill="white"/>
+  
+  <!-- 坐标轴 -->
+  <!-- y_i 轴（水平方向） -->
+  <line x1="0" y1="200" x2="400" y2="200" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <!-- x_i 轴（垂直方向） -->
+  <line x1="200" y1="400" x2="200" y2="0" stroke="black" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- 箭头 -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="black"/>
+    </marker>
+  </defs>
+  
+  <!-- 网格线 / 刻度标记 -->
+  <!-- 在 y_i = -T 处 -->
+  <line x1="120" y1="195" x2="120" y2="205" stroke="black" stroke-width="1.5"/>
+  <!-- 在 y_i = T 处 -->
+  <line x1="280" y1="195" x2="280" y2="205" stroke="black" stroke-width="1.5"/>
+  <!-- 在 x_i = -T 处 -->
+  <line x1="195" y1="280" x2="205" y2="280" stroke="black" stroke-width="1.5"/>
+  <!-- 在 x_i = T 处 -->
+  <line x1="195" y1="120" x2="205" y2="120" stroke="black" stroke-width="1.5"/>
+  
+  <!-- 标签（刻度值） -->
+  <text x="120" y="220" font-family="Arial" font-size="14" text-anchor="middle">-√(2λ)</text>
+  <text x="280" y="220" font-family="Arial" font-size="14" text-anchor="middle">√(2λ)</text>
+  <text x="220" y="290" font-family="Arial" font-size="14">-√(2λ)</text>
+  <text x="220" y="110" font-family="Arial" font-size="14">√(2λ)</text>
+  
+  <!-- 轴标签 -->
+  <text x="390" y="230" font-family="Arial" font-size="16" font-weight="bold">y_i</text>
+  <text x="210" y="20" font-family="Arial" font-size="16" font-weight="bold">x_i</text>
+  
+  <!-- 函数图像 -->
+  <!-- 左分支：x_i = y_i, y_i <= -T -->
+  <line x1="0" y1="400" x2="120" y2="280" stroke="#1f77b4" stroke-width="3"/>
+  
+  <!-- 水平分支：x_i = 0, -T < y_i < T -->
+  <line x1="120" y1="200" x2="280" y2="200" stroke="#1f77b4" stroke-width="3"/>
+  
+  <!-- 右分支：x_i = y_i, y_i >= T -->
+  <line x1="280" y1="120" x2="400" y2="0" stroke="#1f77b4" stroke-width="3"/>
+  
+  <!-- 连接间断点的虚线 -->
+  <!-- 左间断点：(-T, -T) 到 (-T, 0)，即 (150, 350) 到 (150, 250) -->
+  <line x1="120" y1="280" x2="120" y2="200" stroke="red" stroke-width="2" stroke-dasharray="6,6"/>
+  <!-- 右间断点：(T, 0) 到 (T, T)，即 (350, 250) 到 (350, 150) -->
+  <line x1="280" y1="120" x2="280" y2="200" stroke="red" stroke-width="2" stroke-dasharray="6,6"/>
+
+  <line x1="120" y1="280" x2="280" y2="120" stroke="#1f77b4" stroke-width="2" stroke-dasharray="6,6"/>
+
+  <!-- 端点 -->
+  <!-- 左分支端点（实心，表示函数值等于 y_i） -->
+  <circle cx="120" cy="280" r="6" fill="#1f77b4"/>
+  <!-- 水平分支左端点（空心，表示趋近于0但不等于0） -->
+  <circle cx="120" cy="200" r="6" fill="white" stroke="#1f77b4" stroke-width="3"/>
+  <!-- 水平分支右端点（空心，表示趋近于0但不等于0） -->
+  <circle cx="280" cy="200" r="6" fill="white" stroke="#1f77b4" stroke-width="3"/>
+  <!-- 右分支端点（实心，表示函数值等于 y_i） -->
+  <circle cx="280" cy="120" r="6" fill="#1f77b4"/>
+</svg>

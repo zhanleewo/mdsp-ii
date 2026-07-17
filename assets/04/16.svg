@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="400">
+  <!-- 联合熵 H(X,Y) 的边界框 -->
+  <rect x="60" y="60" width="480" height="280" rx="15" fill="none" stroke="#888" stroke-width="2" stroke-dasharray="8,4" />
+  <text x="300" y="45" font-family="Arial, sans-serif" font-size="20" font-style="italic" text-anchor="middle" fill="#555">H(X,Y)</text>
+  
+  <!-- 圆 X (H(X)) -->
+  <circle cx="200" cy="200" r="120" fill="rgba(66, 133, 244, 0.3)" stroke="#4285f4" stroke-width="3" />
+  <text x="200" y="50" font-family="Arial, sans-serif" font-size="24" font-style="italic" font-weight="bold" text-anchor="middle" fill="#4285f4">H(X)</text>
+  <text x="90" y="210" font-family="Arial, sans-serif" font-size="20" font-style="italic" text-anchor="middle" fill="#4285f4">H(X|Y)</text>
+  
+  <!-- 圆 Y (H(Y)) -->
+  <circle cx="400" cy="200" r="120" fill="rgba(234, 67, 53, 0.3)" stroke="#ea4335" stroke-width="3" />
+  <text x="400" y="50" font-family="Arial, sans-serif" font-size="24" font-style="italic" font-weight="bold" text-anchor="middle" fill="#ea4335">H(Y)</text>
+  <text x="510" y="210" font-family="Arial, sans-serif" font-size="20" font-style="italic" text-anchor="middle" fill="#ea4335">H(Y|X)</text>
+  
+  <!-- 交集 I(X;Y) -->
+  <text x="300" y="210" font-family="Arial, sans-serif" font-size="24" font-style="italic" font-weight="bold" text-anchor="middle" fill="#9c27b0">I(X;Y)</text>
+  
+  <!-- 图注 -->
+  <text x="300" y="380" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#666">图：信息论中的熵、条件熵与互信息关系图</text>
+</svg>

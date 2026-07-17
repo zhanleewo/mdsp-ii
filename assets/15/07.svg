@@ -1,0 +1,103 @@
+<svg width="600" height="600" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect width="600" height="600" fill="#fafafa" rx="8" />
+  
+  <!-- 标题 -->
+  <text x="300" y="40" font-family="Arial, sans-serif" font-size="22" font-weight="bold" text-anchor="middle" fill="#1a1a2e">
+    有向图与联合分布的双向因子分解
+  </text>
+  
+  <!-- 定义箭头 -->
+  <defs>
+    <marker id="arrow-blue" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto">
+      <path d="M 0 0 L 10 4 L 0 8 z" fill="#2563eb" />
+    </marker>
+    <marker id="arrow-red" markerWidth="10" markerHeight="8" refX="8" refY="4" orient="auto">
+      <path d="M 0 0 L 10 4 L 0 8 z" fill="#dc2626" />
+    </marker>
+  </defs>
+  
+  <!-- 四个节点：矩形四顶点 -->
+  <!-- A (左上) -->
+  <circle cx="150" cy="200" r="55" fill="white" stroke="#1a1a2e" stroke-width="3" />
+  <text x="150" y="212" font-family="Arial, sans-serif" font-size="34" font-weight="bold" text-anchor="middle" fill="#1a1a2e">A</text>
+  
+  <!-- B (右上) -->
+  <circle cx="450" cy="200" r="55" fill="white" stroke="#1a1a2e" stroke-width="3" />
+  <text x="450" y="212" font-family="Arial, sans-serif" font-size="34" font-weight="bold" text-anchor="middle" fill="#1a1a2e">B</text>
+  
+  <!-- C (左下) -->
+  <circle cx="150" cy="440" r="55" fill="white" stroke="#1a1a2e" stroke-width="3" />
+  <text x="150" y="452" font-family="Arial, sans-serif" font-size="34" font-weight="bold" text-anchor="middle" fill="#1a1a2e">C</text>
+  
+  <!-- D (右下) -->
+  <circle cx="450" cy="440" r="55" fill="white" stroke="#1a1a2e" stroke-width="3" />
+  <text x="450" y="452" font-family="Arial, sans-serif" font-size="34" font-weight="bold" text-anchor="middle" fill="#1a1a2e">D</text>
+  
+  
+  <!-- ====== 蓝色箭头：祖先 → 后代 ====== -->
+  <!-- 所有蓝色箭头偏移 -6px（向左/向上），避免与红线重叠 -->
+  
+  <!-- A -> B（上边，蓝线上偏） -->
+  <line x1="205" y1="190" x2="395" y2="190" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow-blue)" />
+  
+  <!-- A -> C（左边，蓝线左偏） -->
+  <line x1="140" y1="255" x2="140" y2="385" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow-blue)" />
+  
+  <!-- B -> D（右边，蓝线右偏） -->
+  <line x1="460" y1="255" x2="460" y2="385" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow-blue)" />
+  
+  <!-- C -> D（下边，蓝线下偏） -->
+  <line x1="205" y1="450" x2="395" y2="450" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow-blue)" />
+  
+  <!-- A -> D（对角线，蓝线靠近A-C-D侧） -->
+  <line x1="185" y1="225" x2="420" y2="425" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow-blue)" />
+  
+  <!-- B -> C（对角线，蓝线靠近B-D-C侧） -->
+  <line x1="415" y1="225" x2="185" y2="425" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow-blue)" />
+  
+  
+  <!-- ====== 红色箭头：后代 → 祖先 ====== -->
+  <!-- 所有红色箭头偏移 +6px（向右/向下），避免与蓝线重叠 -->
+  
+  <!-- D -> C（下边，红线上偏） -->
+  <line x1="395" y1="430" x2="205" y2="430" stroke="#dc2626" stroke-width="3" marker-end="url(#arrow-red)" />
+  
+  <!-- C -> A（左边，红线右偏） -->
+  <line x1="160" y1="255" x2="160" y2="385" stroke="#dc2626" stroke-width="3" marker-end="url(#arrow-red)" />
+  
+  <!-- D -> B（右边，红线左偏） -->
+  <line x1="440" y1="255" x2="440" y2="385" stroke="#dc2626" stroke-width="3" marker-end="url(#arrow-red)" />
+  
+  <!-- B -> A（上边，红线下偏） -->
+  <line x1="205" y1="210" x2="395" y2="210" stroke="#dc2626" stroke-width="3" marker-end="url(#arrow-red)" />
+  
+  <!-- D -> A（对角线，红线靠近D-B-A侧） -->
+  <line x1="415" y1="455" x2="175" y2="245" stroke="#dc2626" stroke-width="3" marker-end="url(#arrow-red)" />
+  
+  <!-- C -> B（对角线，红线靠近C-A-B侧） -->
+  <line x1="185" y1="455" x2="415" y2="245" stroke="#dc2626" stroke-width="3" marker-end="url(#arrow-red)" />
+  
+  
+  <!-- ====== 标注 ====== -->
+  
+  <!-- 蓝色说明 -->
+  <rect x="30" y="65" width="230" height="80" rx="6" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5" />
+  <text x="45" y="85" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1e40af">🔵 蓝色箭头</text>
+  <text x="45" y="105" font-family="Arial, sans-serif" font-size="12" fill="#1e40af">P(A) → P(B|A) → P(C|AB) → P(D|ABC)</text>
+  <text x="45" y="125" font-family="Arial, sans-serif" font-size="11" fill="#3b82f6">P(ABCD) = P(D|ABC)·P(C|AB)·P(B|A)·P(A)</text>
+  
+  <!-- 红色说明 -->
+  <rect x="340" y="65" width="230" height="80" rx="6" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5" />
+  <text x="355" y="85" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#991b1b">🔴 红色箭头</text>
+  <text x="355" y="105" font-family="Arial, sans-serif" font-size="12" fill="#991b1b">P(D) → P(C|D) → P(B|CD) → P(A|BCD)</text>
+  <text x="355" y="125" font-family="Arial, sans-serif" font-size="11" fill="#dc2626">P(ABCD) = P(A|BCD)·P(B|CD)·P(C|D)·P(D)</text>
+  
+  <!-- 图例 -->
+  <rect x="165" y="520" width="270" height="45" rx="6" fill="white" stroke="#d1d5db" stroke-width="1" />
+  <line x1="190" y1="542" x2="235" y2="542" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow-blue)" />
+  <text x="250" y="547" font-family="Arial, sans-serif" font-size="13" fill="#1a1a2e">祖先 → 后代</text>
+  
+  <line x1="350" y1="542" x2="395" y2="542" stroke="#dc2626" stroke-width="3" marker-end="url(#arrow-red)" />
+  <text x="410" y="547" font-family="Arial, sans-serif" font-size="13" fill="#1a1a2e">后代 → 祖先</text>
+</svg>

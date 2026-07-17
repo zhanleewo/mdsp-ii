@@ -1,0 +1,38 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="500">
+  <!-- 三维坐标系 -->
+  <!-- 底部时频平面 -->
+  <line x1="100" y1="400" x2="700" y2="400" stroke="#333" stroke-width="2"/>
+  <line x1="100" y1="400" x2="100" y2="100" stroke="#333" stroke-width="2"/>
+  <line x1="100" y1="400" x2="180" y2="440" stroke="#333" stroke-width="2"/>
+  
+  <!-- 坐标轴标签 -->
+  <text x="700" y="420" font-family="Arial" font-size="16" font-style="italic">时间 t</text>
+  <text x="80" y="100" font-family="Arial" font-size="16" font-style="italic">频率 ω</text>
+  <text x="180" y="460" font-family="Arial" font-size="16" font-style="italic">振幅</text>
+  
+  <!-- 时频平面上的线 -->
+  <!-- 1. 平稳信号：平行于时间轴的直线 -->
+  <line x1="150" y1="320" x2="650" y2="320" stroke="#4285f4" stroke-width="4" stroke-dasharray="none"/>
+  <text x="660" y="320" font-family="Arial" font-size="14" fill="#4285f4">平稳信号</text>
+  
+  <!-- 2. 非平稳信号（chirp-like）：在时频平面上振荡的曲线 -->
+  <path d="M 150 280 Q 200 240 250 260 Q 300 280 350 230 Q 400 180 450 220 Q 500 260 550 200 Q 600 140 650 180" 
+        fill="none" stroke="#ea4335" stroke-width="3.5"/>
+  <text x="660" y="180" font-family="Arial" font-size="14" fill="#ea4335">非平稳信号</text>
+  
+  <!-- 底部时频平面的辅助网格 -->
+  <line x1="150" y1="400" x2="150" y2="0" stroke="#ddd" stroke-width="0.5" stroke-dasharray="4,4"/>
+  <line x1="200" y1="400" x2="200" y2="0" stroke="#ddd" stroke-width="0.5" stroke-dasharray="4,4"/>
+  <line x1="300" y1="400" x2="300" y2="0" stroke="#ddd" stroke-width="0.5" stroke-dasharray="4,4"/>
+  <line x1="400" y1="400" x2="400" y2="0" stroke="#ddd" stroke-width="0.5" stroke-dasharray="4,4"/>
+  <line x1="500" y1="400" x2="500" y2="0" stroke="#ddd" stroke-width="0.5" stroke-dasharray="4,4"/>
+  <line x1="600" y1="400" x2="600" y2="0" stroke="#ddd" stroke-width="0.5" stroke-dasharray="4,4"/>
+  
+  <!-- 时频平面标注 -->
+  <text x="380" y="490" font-family="Arial" font-size="14" text-anchor="middle" fill="#666">时频平面</text>
+  
+  <!-- 底部时频平面的边缘 -->
+  <line x1="100" y1="400" x2="700" y2="400" stroke="#333" stroke-width="1"/>
+  <line x1="700" y1="400" x2="750" y2="410" stroke="#333" stroke-width="1"/>
+</svg>

@@ -1,0 +1,67 @@
+<svg viewBox="0 0 800 350" preserveAspectRatio="xMidYMid meet" style="width:100%; height:100%; display:block; background:transparent;" xmlns="http://www.w3.org/2000/svg">
+    
+      <defs>
+        <linearGradient id="gaussGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.18" />
+          <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.02" />
+        </linearGradient>
+      </defs>
+
+      <!-- 坐标轴 -->
+      <line x1="80" y1="320" x2="750" y2="320" stroke="#4a6fa5" stroke-width="2.5" />
+      <line x1="80" y1="50" x2="80" y2="320" stroke="#4a6fa5" stroke-width="2.5" />
+      <text x="750" y="340" fill="#6b8ec4" font-family="Arial" font-size="18" text-anchor="end">n</text>
+      <text x="55" y="60" fill="#6b8ec4" font-family="Arial" font-size="18" text-anchor="end">x(n)</text>
+
+      <!-- 高斯钟形曲线（半透明填充+虚线边框） -->
+      <path d="M 400 100 
+               C 300 100, 250 200, 250 280 
+               C 250 310, 300 320, 400 320 
+               C 500 320, 550 310, 550 280 
+               C 550 200, 500 100, 400 100 Z"
+            fill="url(#gaussGrad)" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="6,6" opacity="0.8" />
+
+      <!-- 宽平稳随机波形（蓝色连续曲线） -->
+      <polyline points="
+        80,270
+        110,240
+        140,210
+        170,250
+        200,290
+        230,210
+        260,170
+        290,230
+        320,290
+        350,240
+        380,180
+        410,150
+        440,200
+        470,260
+        500,220
+        530,160
+        560,130
+        590,180
+        620,240
+        650,200
+        680,150
+        710,120
+        740,170
+        770,220"
+        fill="none" stroke="#38bdf8" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round" />
+
+      <!-- 离散采样点（黄色圆点，带轻微发光） -->
+      <g fill="#facc15">
+        <circle cx="80" cy="270" r="5" />
+        <circle cx="140" cy="210" r="5" />
+        <circle cx="200" cy="290" r="5" />
+        <circle cx="260" cy="170" r="5" />
+        <circle cx="320" cy="290" r="5" />
+        <circle cx="380" cy="180" r="5" />
+        <circle cx="440" cy="200" r="5" />
+        <circle cx="500" cy="220" r="5" />
+        <circle cx="560" cy="130" r="5" />
+        <circle cx="620" cy="240" r="5" />
+        <circle cx="680" cy="150" r="5" />
+        <circle cx="740" cy="170" r="5" />
+      </g>
+    </svg>

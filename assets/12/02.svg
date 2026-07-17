@@ -1,0 +1,50 @@
+<svg width="500" height="500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="black" />
+    </marker>
+  </defs>
+
+  <!-- 背景 -->
+  <rect width="500" height="500" fill="white"/>
+
+  <!-- 坐标轴 -->
+  <line x1="0" y1="250" x2="480" y2="250" stroke="black" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="485" y="275" font-family="Arial" font-size="16" font-weight="bold">y_i</text>
+  
+  <line x1="250" y1="480" x2="250" y2="20" stroke="black" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="260" y="20" font-family="Arial" font-size="16" font-weight="bold">x_i</text>
+
+  <!-- 原点标记 -->
+  <text x="260" y="270" font-family="Arial" font-size="14">O</text>
+
+  <!-- 刻度标记（λ 和 -λ） -->
+  <!-- 正 λ 标记 -->
+  <line x1="345" y1="245" x2="345" y2="255" stroke="black" stroke-width="1.5"/>
+  <text x="345" y="275" font-family="Arial" font-size="14" text-anchor="middle">λ</text>
+  
+  <!-- 负 λ 标记 -->
+  <line x1="155" y1="245" x2="155" y2="255" stroke="black" stroke-width="1.5"/>
+  <text x="155" y="275" font-family="Arial" font-size="14" text-anchor="middle">-λ</text>
+
+  <!-- x 轴上的正负 λ 标记 -->
+  <line x1="245" y1="155" x2="255" y2="155" stroke="black" stroke-width="1.5"/>
+  <text x="270" y="160" font-family="Arial" font-size="14">λ</text>
+  <line x1="245" y1="345" x2="255" y2="345" stroke="black" stroke-width="1.5"/>
+  <text x="270" y="355" font-family="Arial" font-size="14">-λ</text>
+
+  <!-- 主分支：x_i = y_i - λ, 当 x_i >= 0（即 y_i >= λ） -->
+  <line x1="345" y1="250" x2="480" y2="115" stroke="#1f77b4" stroke-width="3"/>
+  
+  <!-- 主分支：x_i = y_i + λ, 当 x_i < 0（即 y_i < -λ） -->
+  <line x1="0" y1="385" x2="155" y2="250" stroke="#1f77b4" stroke-width="3"/>
+
+  <!-- 零区间：x_i = 0, 当 -λ <= y_i <= λ -->
+  <!-- <line x1="155" y1="250" x2="345" y2="250" stroke="#1f77b4" stroke-width="3"/> -->
+
+  <!-- 端点标记 -->
+  <!-- 右分支端点（实心，表示可取到） -->
+  <circle cx="345" cy="250" r="6" fill="#1f77b4"/>
+  <!-- 左分支端点（实心，表示可取到） -->
+  <circle cx="155" cy="250" r="6" fill="#1f77b4"/>
+</svg>

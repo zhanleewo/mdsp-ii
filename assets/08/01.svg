@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 650" width="100%" height="650">
+  <defs>
+    <style>
+      .axis { stroke: #aaa; stroke-width: 1.5; stroke-dasharray: 4,4; }
+      .wave { fill: none; stroke: #1f77b4; stroke-width: 2.5; }
+      .window-fill { fill: rgba(255, 0, 0, 0.08); stroke: none; }
+      .window-border { fill: none; stroke: #d62728; stroke-width: 2; stroke-dasharray: 6,4; }
+      .label-title { font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; fill: #333; }
+      .label-desc { font-family: Arial, sans-serif; font-size: 14px; fill: #555; }
+      .label-freq { font-family: Arial, sans-serif; font-size: 13px; fill: #888; font-style: italic; }
+    </style>
+  </defs>
+
+  <!-- 标题 -->
+  <text x="425" y="30" class="label-title" text-anchor="middle">不同频率信号与窗函数的匹配关系</text>
+  <text x="425" y="50" class="label-desc" text-anchor="middle" fill="#777">频率越低 → 窗越宽（提高频率分辨率）| 频率越高 → 窗越窄（提高时间分辨率）</text>
+
+  <!-- 频率递增方向指示 -->
+  <line x1="780" y1="150" x2="780" y2="550" stroke="#ccc" stroke-width="1.5" />
+  <text x="800" y="350" class="label-freq" text-anchor="middle" transform="rotate(90, 800, 350)">频率增加 →</text>
+
+  <!-- ======================== 第一行：低频信号 + 宽窗 ======================== -->
+  <!-- 基线 -->
+  <line x1="50" y1="150" x2="780" y2="150" class="axis" />
+  <text x="40" y="155" class="label-freq" text-anchor="end">低频</text>
+
+  <!-- 宽窗 (窗覆盖范围大) -->
+  <rect x="100" y="50" width="600" height="200" rx="30" ry="30" class="window-fill" />
+  <rect x="100" y="50" width="600" height="200" rx="30" ry="30" class="window-border" />
+  
+  <!-- 宽窗下的正弦波 (周期长) -->
+  <!-- 
+    近似 sin(x), 幅度=50, 均值=150. 
+    周期 = 200px. 范围: 50 到 750 (700px). 
+    0 到 180 度: C 36 100, 64 200, 100 150 
+    使用 C 72 50, 128 250, 200 150 
+  -->
+  <path class="wave" d="
+    M 50 150 
+    C 72 50, 128 250, 200 150 
+    C 272 50, 328 250, 400 150 
+    C 472 50, 528 250, 600 150 
+    C 672 50, 728 250, 800 150" 
+  />
+  
+  <text x="100" y="40" class="label-desc" fill="#1f77b4">信号: 低频 (周期长)</text>
+  <text x="100" y="280" class="label-desc" fill="#d62728">窗: 宽窗（覆盖多个周期，频率分辨率高）</text>
+
+  <!-- ======================== 第二行：中频信号 + 中等窗 ======================== -->
+  <!-- 基线 -->
+  <line x1="50" y1="350" x2="780" y2="350" class="axis" />
+  <text x="40" y="355" class="label-freq" text-anchor="end">中频</text>
+
+  <!-- 中等窗 -->
+  <rect x="250" y="250" width="300" height="200" rx="20" ry="20" class="window-fill" />
+  <rect x="250" y="250" width="300" height="200" rx="20" ry="20" class="window-border" />
+
+  <!-- 中频正弦波 (周期中等) -->
+  <!-- 周期 = 100px.  100px: C 36 250, 64 450, 100 350 -->
+  <path class="wave" d="
+    M 50 350 
+    C 86 250, 114 450, 150 350 
+    C 186 250, 214 450, 250 350 
+    C 286 250, 314 450, 350 350 
+    C 386 250, 414 450, 450 350 
+    C 486 250, 514 450, 550 350 
+    C 586 250, 614 450, 650 350 
+    C 686 250, 714 450, 750 350 
+    C 786 250, 814 450, 850 350" 
+  />
+
+  <text x="250" y="240" class="label-desc" fill="#1f77b4">信号: 中频 (周期适中)</text>
+  <text x="250" y="480" class="label-desc" fill="#d62728">窗: 中等窗（平衡时间与频率分辨率）</text>
+
+  <!-- ======================== 第三行：高频信号 + 窄窗 ======================== -->
+  <!-- 基线 -->
+  <line x1="50" y1="550" x2="780" y2="550" class="axis" />
+  <text x="40" y="555" class="label-freq" text-anchor="end">高频</text>
+
+  <!-- 窄窗 -->
+  <rect x="350" y="450" width="100" height="200" rx="10" ry="10" class="window-fill" />
+  <rect x="350" y="450" width="100" height="200" rx="10" ry="10" class="window-border" />
+
+  <!-- 高频正弦波 (周期短) -->
+  <!-- 周期 = 50px. 25px: C 9 500, 16 600, 25 550 -->
+  <path class="wave" d="
+    M 50 550 
+    C 68 500, 82 600, 100 550 
+    C 118 500, 132 600, 150 550 
+    C 168 500, 182 600, 200 550 
+    C 218 500, 232 600, 250 550 
+    C 268 500, 282 600, 300 550 
+    C 318 500, 332 600, 350 550 
+    C 368 500, 382 600, 400 550 
+    C 418 500, 432 600, 450 550 
+    C 468 500, 482 600, 500 550 
+    C 518 500, 532 600, 550 550 
+    C 568 500, 582 600, 600 550 
+    C 618 500, 632 600, 650 550 
+    C 668 500, 682 600, 700 550 
+    C 718 500, 732 600, 750 550 
+    C 768 500, 782 600, 800 550" 
+  />
+
+  <text x="350" y="440" class="label-desc" fill="#1f77b4">信号: 高频 (周期短)</text>
+  <text x="350" y="680" class="label-desc" fill="#d62728">窗: 窄窗（聚焦局部时间，时间分辨率高）</text>
+
+  <!-- 底部结论 -->
+  <text x="425" y="630" class="label-title" text-anchor="middle" fill="#333">频率越低，窗越宽；频率越高，窗越窄——这就是小波变换“自适应窗”的核心思想</text>
+</svg>
