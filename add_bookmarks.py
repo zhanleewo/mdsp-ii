@@ -7,15 +7,15 @@ import re
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
 pdf_path = r"mdsp-ii.pdf"
-output_path = r"mdsp-ii-bookmarked.pdf"
+output_path = r"现代数字信号处理 II 笔记.pdf"
 
 doc = fitz.open(pdf_path)
 
 SIZE_TO_LEVEL = {
-    22.4: 1,
-    14.0: 2,
-    10.5: 3,
-    8.2:  4,
+    29.6: 1,   # H1: 第a单元
+    18.5: 2,   # H2: 第b讲
+    13.9: 3,   # H3: c.
+    10.8: 4,   # H4: c.d
 }
 
 all_headings = []
@@ -85,13 +85,27 @@ toc_entries.append([1, "课程导论 / 前言", first_page, {
     "to": fitz.Point(first_x0, first_y0),
 }])
 
+parent_stack = [1]  # 虚拟 H1 已加入
+
 for page, level, text, (x0, y0, x1, y1) in all_headings:
     dest = {
         "kind": fitz.LINK_GOTO,
         "page": page - 1,
         "to": fitz.Point(x0, y0),
     }
+
+    # 弹出所有 >= 当前 level 的父级（同级或更深）
+    while parent_stack and parent_stack[-1] >= level:
+        parent_stack.pop()
+
+    # 插入缺失的中间层级（虚拟父级）
+    parent_level = parent_stack[-1] if parent_stack else 0
+    for missing_level in range(parent_level + 1, level):
+        toc_entries.append([missing_level, "(节点)", page, dest])
+        parent_stack.append(missing_level)
+
     toc_entries.append([level, text, page, dest])
+    parent_stack.append(level)
 
 doc.set_toc(toc_entries)
 doc.save(output_path, garbage=4, deflate=True)

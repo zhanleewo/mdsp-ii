@@ -1,5 +1,5 @@
 <div style="page-break-before: always; padding: 8% 8% 0 8%;">
- <h1 id="第十五讲-统一伪随机数生成器" style="text-align: center; margin-bottom: 2rem; border-bottom: none; display: block;">第十五讲：统一伪随机数生成器</h1> 
+ <h1 id="第十六讲-统一伪随机数生成器" style="text-align: center; margin-bottom: 2rem; border-bottom: none; display: block;">第十六讲：统一伪随机数生成器</h1> 
  <div style="display: flex; align-items: center; justify-content: center; gap: 12px; margin: 1.8rem auto;">
   <span style="flex:1; max-width:80px; height:1px; background: linear-gradient(to right, transparent, #888);"></span>
   <span style="display:inline-block; width:6px; height:6px; background:#38bdf8; border-radius:50%;"></span>
@@ -3358,10 +3358,12 @@ E(\theta) = -\log P(X \mid \theta) - \log P(\theta)
 其中第二项的梯度为：
 
 \[
-\nabla_\theta \log Z(\theta) = \frac{1}{Z(\theta)} \nabla_\theta Z(\theta)
-= \frac{1}{Z(\theta)} \int \nabla_\theta \exp(-E_\theta(x)) dx
-= -\frac{1}{Z(\theta)} \int \exp(-E_\theta(x)) \nabla_\theta E_\theta(x) dx
-= -\int p_\theta(x) \nabla_\theta E_\theta(x) dx
+   \begin{aligned}
+\nabla_\theta \log Z(\theta) &= \frac{1}{Z(\theta)} \nabla_\theta Z(\theta) \\
+&= \frac{1}{Z(\theta)} \int \nabla_\theta \exp(-E_\theta(x)) dx \\
+&= -\frac{1}{Z(\theta)} \int \exp(-E_\theta(x)) \nabla_\theta E_\theta(x) dx \\
+&= -\int p_\theta(x) \nabla_\theta E_\theta(x) dx
+\end{aligned}
 \tag{16.180}
 \]
 

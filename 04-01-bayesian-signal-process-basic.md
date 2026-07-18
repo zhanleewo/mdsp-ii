@@ -471,7 +471,10 @@ P(C=1) = \frac{18}{20} = 0.9, \qquad P(C=0) = \frac{2}{20} = 0.1
 **先算有女朋友（\( C=1 \)）的后验（忽略分母）：**
 
 \[
-P(C=1) \cdot P(F_1=帅 \mid C=1) \cdot P(F_2=有钱 \mid C=1) \cdot P(F_3=性格好 \mid C=1) \cdot P(F_4=学习不好 \mid C=1)
+   \begin{aligned}
+P(C=1) \cdot P(F_1=帅 \mid C=1) \cdot P(F_2=有钱 \mid C=1) \\
+\cdot P(F_3=性格好 \mid C=1) \cdot P(F_4=学习不好 \mid C=1)
+\end{aligned}
 \]
 
 其中 \( P(F_4=学习不好 \mid C=1) = 1 - P(学习好 \mid C=1) = 1 - 2/18 = 16/18 \approx 0.889 \)。
@@ -509,7 +512,10 @@ P(C=1) \cdot P(F_1=帅 \mid C=1) \cdot P(F_2=有钱 \mid C=1) \cdot P(F_3=性格
 注意 \( P(有钱 \mid C=0) = 0 \)，因此只要有一个条件概率为 0，整个乘积就为 0：
 
 \[
-P(C=0) \cdot P(帅 \mid C=0) \cdot P(有钱 \mid C=0) \cdot P(性格好 \mid C=0) \cdot P(学习不好 \mid C=0) = 0.1 \times 0.5 \times 0 \times 0.5 \times 1 = 0
+   \begin{aligned}
+& P(C=0) \cdot P(帅 \mid C=0) \cdot P(有钱 \mid C=0) \cdot P(性格好 \mid C=0) \cdot P(学习不好 \mid C=0) \\
+=& 0.1 \times 0.5 \times 0 \times 0.5 \times 1 = 0
+\end{aligned}
 \]
 
 **结论**：有女朋友的后验 ∝ 0.3146，没有女朋友的后验 ∝ 0。归一化后，有女朋友的概率为 1，没有女朋友的概率为 0。

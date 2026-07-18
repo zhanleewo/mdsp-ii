@@ -306,8 +306,10 @@ f(t) = C \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} W_f(a, b) \, \phi_{a,b}
 令 \( u = \frac{t - b}{a} \)，则 \( t = au + b \)，\( dt = a\,du \)。代入：
 
 \[
-\widehat{\phi_{a,b}}(\omega) = \frac{1}{\sqrt{a}} \int_{-\infty}^{\infty} \phi(u) \exp(-j\omega (au + b)) \, a\,du
-= \sqrt{a} \exp(-j\omega b) \int_{-\infty}^{\infty} \phi(u) \exp(-j a\omega u) \, du
+   \begin{aligned}
+\widehat{\phi_{a,b}}(\omega) &= \frac{1}{\sqrt{a}} \int_{-\infty}^{\infty} \phi(u) \exp(-j\omega (au + b)) \, a\,du \\
+&= \sqrt{a} \exp(-j\omega b) \int_{-\infty}^{\infty} \phi(u) \exp(-j a\omega u) \, du
+\end{aligned}
 \tag{8.21}
 \]
 
@@ -377,21 +379,30 @@ f(t) = C \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} W_f(a, b) \, \phi_{a,b}
 将 (8.28) 和 (8.29) 代入 (8.27)：
 
 \[
-\langle f, g \rangle = C \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} \frac{a}{4\pi^2} \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} \hat{f}(\omega_1) \overline{\hat{\phi}(a\omega_1)} \overline{\hat{g}(\omega_2)} \hat{\phi}(a\omega_2) \exp(j(\omega_1 - \omega_2)b) \, d\omega_1 \, d\omega_2 \, \frac{da \, db}{a^2}
+   \begin{aligned}
+\langle f, g \rangle = C \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} \frac{a}{4\pi^2} \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} & \hat{f}(\omega_1) \overline{\hat{\phi}(a\omega_1)} \overline{\hat{g}(\omega_2)} \hat{\phi}(a\omega_2) \\
+& \exp(j(\omega_1 - \omega_2)b) \, d\omega_1 \, d\omega_2 \, \frac{da \, db}{a^2}
+\end{aligned}
 \tag{8.30}
 \]
 
 合并常数和变量：
 
 \[
-\langle f, g \rangle = \frac{C}{4\pi^2} \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} \frac{a}{a^2} \hat{f}(\omega_1) \overline{\hat{g}(\omega_2)} \overline{\hat{\phi}(a\omega_1)} \hat{\phi}(a\omega_2) \exp(j(\omega_1 - \omega_2)b) \, d\omega_1 \, d\omega_2 \, da \, db
+   \begin{aligned}
+\langle f, g \rangle = \frac{C}{4\pi^2} \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} & \frac{a}{a^2} \hat{f}(\omega_1) \overline{\hat{g}(\omega_2)} \overline{\hat{\phi}(a\omega_1)} \hat{\phi}(a\omega_2) \\
+& \exp(j(\omega_1 - \omega_2)b) \, d\omega_1 \, d\omega_2 \, da \, db
+\end{aligned}
 \tag{8.31}
 \]
 
 即：
 
 \[
-= \frac{C}{4\pi^2} \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} \frac{1}{a} \hat{f}(\omega_1) \overline{\hat{g}(\omega_2)} \overline{\hat{\phi}(a\omega_1)} \hat{\phi}(a\omega_2) \exp(j(\omega_1 - \omega_2)b) \, d\omega_1 \, d\omega_2 \, da \, db
+   \begin{aligned}
+= \frac{C}{4\pi^2} \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} & \frac{1}{a} \hat{f}(\omega_1) \overline{\hat{g}(\omega_2)} \overline{\hat{\phi}(a\omega_1)} \hat{\phi}(a\omega_2) \\
+& \exp(j(\omega_1 - \omega_2)b) \, d\omega_1 \, d\omega_2 \, da \, db
+\end{aligned}
 \tag{8.32}
 \]
 

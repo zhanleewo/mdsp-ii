@@ -225,7 +225,7 @@ f_X(x; \boldsymbol{\phi}) = \frac{1}{(2\pi)^{n/2} \sqrt{\det(C)}} \exp\left( -\f
 
 对 (5.6) 两边取自然对数，得到对数似然函数。这里的 \( \log \) 是自然对数（以 \( e \) 为底）。展开如下：
 
-\[
+\[\small
 \log f_X(x; \boldsymbol{\phi}) = \log \left[ \frac{1}{(2\pi)^{n/2} \sqrt{\det(C)}} \exp\left( -\frac{1}{2} (x - A(\theta) \cdot S)^T C^{-1} (x - A(\theta) \cdot S) \right) \right]
 \tag{5.7}
 \]
@@ -233,7 +233,10 @@ f_X(x; \boldsymbol{\phi}) = \frac{1}{(2\pi)^{n/2} \sqrt{\det(C)}} \exp\left( -\f
 利用 \( \log(ab) = \log a + \log b \)，将指数函数前的系数与指数项分开：
 
 \[
-\log f_X(x; \boldsymbol{\phi}) = \log \left( \frac{1}{(2\pi)^{n/2}} \right) + \log \left( \frac{1}{\sqrt{\det(C)}} \right) + \log \left[ \exp\left( -\frac{1}{2} (x - A(\theta) \cdot S)^T C^{-1} (x - A(\theta) \cdot S) \right) \right]
+   \begin{aligned}
+\log f_X(x; \boldsymbol{\phi}) &= \log \left( \frac{1}{(2\pi)^{n/2}} \right) + \log \left( \frac{1}{\sqrt{\det(C)}} \right) \\
+&+ \log \left[ \exp\left( -\frac{1}{2} (x - A(\theta) \cdot S)^T C^{-1} (x - A(\theta) \cdot S) \right) \right]
+    \end{aligned}
 \tag{5.8}
 \]
 
@@ -253,13 +256,16 @@ f_X(x; \boldsymbol{\phi}) = \frac{1}{(2\pi)^{n/2} \sqrt{\det(C)}} \exp\left( -\f
 
 第三项：
 \[
-\log \left[ \exp\left( -\frac{1}{2} (x - A(\theta) \cdot S)^T C^{-1} (x - A(\theta) \cdot S) \right) \right] = -\frac{1}{2} (x - A(\theta) \cdot S)^T C^{-1} (x - A(\theta) \cdot S)
+   \begin{aligned}
+& \log \left[ \exp\left( -\frac{1}{2} (x - A(\theta) \cdot S)^T C^{-1} (x - A(\theta) \cdot S) \right) \right] \\
+=& -\frac{1}{2} (x - A(\theta) \cdot S)^T C^{-1} (x - A(\theta) \cdot S)
+\end{aligned}
 \tag{5.11}
 \]
 
 将 (5.9)、(5.10)、(5.11) 代回 (5.8)，得到：
 
-\[
+\[ \small
 \boxed{
 \log f_X(x; \boldsymbol{\phi}) = -\frac{n}{2} \log(2\pi) - \frac{1}{2} \log \det(C) - \frac{1}{2} (x - A(\theta) \cdot S)^T C^{-1} (x - A(\theta) \cdot S)
 }
@@ -381,8 +387,9 @@ x \sim \mathcal{N}(\boldsymbol{\mu}(\boldsymbol{\phi}), \; C(\boldsymbol{\phi}))
 
 或者显式地写出矩阵乘法：
 
-\[
-\operatorname{Tr}\left[
+\[\small
+   \begin{aligned}
+& \operatorname{Tr}\left[
 \begin{pmatrix}
 \lambda_1^{-1}(\phi) & & & \\
 & \lambda_2^{-1}(\phi) & & \\
@@ -395,8 +402,9 @@ x \sim \mathcal{N}(\boldsymbol{\mu}(\boldsymbol{\phi}), \; C(\boldsymbol{\phi}))
 & & \ddots & \\
 & & & \frac{\partial \lambda_n(\phi)}{\partial \phi_i}
 \end{pmatrix}
-\right]
-= \operatorname{Tr}\left( \Lambda^{-1}(\phi) \frac{\partial \Lambda(\phi)}{\partial \phi_i} \right)
+\right] \\
+=& \operatorname{Tr}\left( \Lambda^{-1}(\phi) \frac{\partial \Lambda(\phi)}{\partial \phi_i} \right)
+\end{aligned}
 \tag{5.24}
 \]
 
@@ -460,7 +468,7 @@ U \frac{\partial \Lambda}{\partial \phi_i} U^T \xrightarrow{?} \frac{\partial}{\
 
 这个等式的左边是：
 
-\[
+\[\small
 \operatorname{Tr}\left( C^{-1} \frac{\partial C}{\partial \phi_i} \right)
 = \operatorname{Tr}\left( C^{-1} \frac{\partial U}{\partial \phi_i} \Lambda U^T \right)
 + \operatorname{Tr}\left( C^{-1} U \frac{\partial \Lambda}{\partial \phi_i} U^T \right)
@@ -490,7 +498,7 @@ U \frac{\partial \Lambda}{\partial \phi_i} U^T \xrightarrow{?} \frac{\partial}{\
 
 第三项：
 
-\[
+\[\small
 \operatorname{Tr}\left( C^{-1} U \Lambda \frac{\partial U^T}{\partial \phi_i} \right)
 = \operatorname{Tr}\left( U \Lambda^{-1} U^T U \Lambda \frac{\partial U^T}{\partial \phi_i} \right)
 = \operatorname{Tr}\left( U \Lambda^{-1} \Lambda \frac{\partial U^T}{\partial \phi_i} \right)
@@ -622,20 +630,24 @@ R = (x - \boldsymbol{\mu})^T \, C^{-1} \, (x - \boldsymbol{\mu})
 展开：
 
 \[
-\frac{\partial R}{\partial \phi_i} = 
-\left( \frac{\partial}{\partial \phi_i} (x - \boldsymbol{\mu})^T \right) C^{-1} (x - \boldsymbol{\mu})
-+ (x - \boldsymbol{\mu})^T \left( \frac{\partial}{\partial \phi_i} C^{-1} \right) (x - \boldsymbol{\mu})
+\begin{aligned}
+\frac{\partial R}{\partial \phi_i} &= 
+\left( \frac{\partial}{\partial \phi_i} (x - \boldsymbol{\mu})^T \right) C^{-1} (x - \boldsymbol{\mu}) \\
+&+ (x - \boldsymbol{\mu})^T \left( \frac{\partial}{\partial \phi_i} C^{-1} \right) (x - \boldsymbol{\mu})
 + (x - \boldsymbol{\mu})^T C^{-1} \left( \frac{\partial}{\partial \phi_i} (x - \boldsymbol{\mu}) \right)
+\end{aligned}
 \tag{5.49}
 \]
 
 由于 \( \frac{\partial}{\partial \phi_i} (x - \boldsymbol{\mu}) = -\frac{\partial \boldsymbol{\mu}}{\partial \phi_i} \)，而 \( \left( \frac{\partial}{\partial \phi_i} (x - \boldsymbol{\mu})^T \right) = -\left( \frac{\partial \boldsymbol{\mu}}{\partial \phi_i} \right)^T \)，代入 (5.49) 得到：
 
 \[
-\frac{\partial R}{\partial \phi_i} = 
--\left( \frac{\partial \boldsymbol{\mu}}{\partial \phi_i} \right)^T C^{-1} (x - \boldsymbol{\mu})
-+ (x - \boldsymbol{\mu})^T \left( \frac{\partial C^{-1}}{\partial \phi_i} \right) (x - \boldsymbol{\mu})
+\begin{aligned}
+\frac{\partial R}{\partial \phi_i} &= 
+-\left( \frac{\partial \boldsymbol{\mu}}{\partial \phi_i} \right)^T C^{-1} (x - \boldsymbol{\mu}) \\
+&+ (x - \boldsymbol{\mu})^T \left( \frac{\partial C^{-1}}{\partial \phi_i} \right) (x - \boldsymbol{\mu})
 - (x - \boldsymbol{\mu})^T C^{-1} \left( \frac{\partial \boldsymbol{\mu}}{\partial \phi_i} \right)
+\end{aligned}
 \tag{5.50}
 \]
 
@@ -725,7 +737,7 @@ R = (x - \boldsymbol{\mu})^T \, C^{-1} \, (x - \boldsymbol{\mu})
 
 在这些记法下，(5.58) 可以写为：
 
-\[
+\[ \small
 \frac{\partial R}{\partial \phi_i} = 
 -2 \left( (\boldsymbol{\mu})_i' \right)^T C^{-1} (x - \boldsymbol{\mu})
 - (x - \boldsymbol{\mu})^T C^{-1} (C)_i' C^{-1} (x - \boldsymbol{\mu})
@@ -734,7 +746,7 @@ R = (x - \boldsymbol{\mu})^T \, C^{-1} \, (x - \boldsymbol{\mu})
 
 回到对数似然函数的导数 (5.46)。目标是 \( -\frac{1}{2} R \)，因此：
 
-\[
+\[ \small
 \frac{\partial \ell}{\partial \phi_i} = -\frac{1}{2} \frac{\partial R}{\partial \phi_i}
 = -\frac{1}{2} \left[ -2 \left( (\boldsymbol{\mu})_i' \right)^T C^{-1} (x - \boldsymbol{\mu}) - (x - \boldsymbol{\mu})^T C^{-1} (C)_i' C^{-1} (x - \boldsymbol{\mu}) \right]
 \tag{5.61}
@@ -788,7 +800,7 @@ R = (x - \boldsymbol{\mu})^T \, C^{-1} \, (x - \boldsymbol{\mu})
 
 将这三项相加：
 
-\[
+\[ \small
 \boxed{
 \frac{\partial \ell}{\partial \phi_i} = 
 \left( (\boldsymbol{\mu})_i' \right)^T C^{-1} (x - \boldsymbol{\mu})
@@ -800,7 +812,7 @@ R = (x - \boldsymbol{\mu})^T \, C^{-1} \, (x - \boldsymbol{\mu})
 
 或者等价地写成：
 
-\[
+\[ \small
 \boxed{
 \ell(\boldsymbol{\phi})' = 
 \left( (\boldsymbol{\mu})_i' \right)^T C^{-1} (x - \boldsymbol{\mu})
@@ -831,7 +843,7 @@ R = (x - \boldsymbol{\mu})^T \, C^{-1} \, (x - \boldsymbol{\mu})
 
 从 (5.66) 出发：
 
-\[
+\[ \footnotesize 
 \frac{\partial \ell}{\partial \phi_i} = 
 \left( (\boldsymbol{\mu})_i' \right)^T C^{-1} (x - \boldsymbol{\mu})
 -\frac{1}{2} \operatorname{Tr}\left( C^{-1} (C)_i' \right)
@@ -841,16 +853,18 @@ R = (x - \boldsymbol{\mu})^T \, C^{-1} \, (x - \boldsymbol{\mu})
 
 对 \( \phi_j \) 再次求偏导，得到一个很长的表达式：
 
-\[
+\[ \footnotesize 
+\begin{aligned}
 \frac{\partial^2 \ell}{\partial \phi_i \partial \phi_j}
-=
+&=
 \left(
 \left( (\boldsymbol{\mu})_i' \right)^T C^{-1} (x - \boldsymbol{\mu}) 
 -\frac{1}{2} \operatorname{Tr}\left( C^{-1} (C)_i' \right)
 + \frac{1}{2} (x - \boldsymbol{\mu})^T C^{-1} (C)_i' C^{-1} (x - \boldsymbol{\mu})
 \right)'
+\end{aligned}
 \tag{5.70}
-\]
+\] 
 
 逐项展开。为简化取期望操作（\( \mathbb{E}[x - \boldsymbol{\mu}] = 0 \)），在展开过程中把项分为两类：
 
@@ -871,11 +885,13 @@ T_1 = \left( (\boldsymbol{\mu})_i' \right)^T C^{-1} (x - \boldsymbol{\mu})
 对 \( \phi_j \) 求导（用乘积法则）：
 
 \[
+\begin{aligned}
 \frac{\partial T_1}{\partial \phi_j}
-=
-\left( (\boldsymbol{\mu})_{ij}'' \right)^T C^{-1} (x - \boldsymbol{\mu})
-+ \left( (\boldsymbol{\mu})_i' \right)^T \left( -C^{-1} (C)_j' C^{-1} \right) (x - \boldsymbol{\mu})
+&=
+\left( (\boldsymbol{\mu})_{ij}'' \right)^T C^{-1} (x - \boldsymbol{\mu}) \\
+&+ \left( (\boldsymbol{\mu})_i' \right)^T \left( -C^{-1} (C)_j' C^{-1} \right) (x - \boldsymbol{\mu})
 - \left( (\boldsymbol{\mu})_i' \right)^T C^{-1} (\boldsymbol{\mu})_j'
+\end{aligned}
 \tag{5.72}
 \]
 
@@ -952,13 +968,15 @@ T_3 = \frac{1}{2} (x - \boldsymbol{\mu})^T C^{-1} (C)_i' C^{-1} (x - \boldsymbol
 将 (5.79) 代入 (5.78)，得到：
 
 \[
+\begin{aligned}
 \frac{\partial T_3}{\partial \phi_j}
-=
--\left( (\boldsymbol{\mu})_j' \right)^T C^{-1} (C)_i' C^{-1} (x - \boldsymbol{\mu})
-- \frac{1}{2} (x - \boldsymbol{\mu})^T C^{-1} (C)_j' C^{-1} (C)_i' C^{-1} (x - \boldsymbol{\mu})
-+ \frac{1}{2} (x - \boldsymbol{\mu})^T C^{-1} (C)_{ij}'' C^{-1} (x - \boldsymbol{\mu})
-- \frac{1}{2} (x - \boldsymbol{\mu})^T C^{-1} (C)_i' C^{-1} (C)_j' C^{-1} (x - \boldsymbol{\mu})
-- \frac{1}{2} (x - \boldsymbol{\mu})^T A (\boldsymbol{\mu})_j'
+&=
+-\left( (\boldsymbol{\mu})_j' \right)^T C^{-1} (C)_i' C^{-1} (x - \boldsymbol{\mu}) \\
+& - \frac{1}{2} (x - \boldsymbol{\mu})^T C^{-1} (C)_j' C^{-1} (C)_i' C^{-1} (x - \boldsymbol{\mu}) \\
+& + \frac{1}{2} (x - \boldsymbol{\mu})^T C^{-1} (C)_{ij}'' C^{-1} (x - \boldsymbol{\mu}) \\
+& - \frac{1}{2} (x - \boldsymbol{\mu})^T C^{-1} (C)_i' C^{-1} (C)_j' C^{-1} (x - \boldsymbol{\mu}) \\
+& - \frac{1}{2} (x - \boldsymbol{\mu})^T A (\boldsymbol{\mu})_j' \\
+\end{aligned}
 \tag{5.80}
 \]
 
@@ -972,7 +990,7 @@ T_3 = \frac{1}{2} (x - \boldsymbol{\mu})^T C^{-1} (C)_i' C^{-1} (x - \boldsymbol
 
 从 (5.66) 开始，得分向量的第 \( i \) 个分量为：
 
-\[
+\[\small
 s_i = \frac{\partial \ell}{\partial \phi_i}
 = \left( (\boldsymbol{\mu})_i' \right)^T C^{-1} (x - \boldsymbol{\mu})
 -\frac{1}{2} \operatorname{Tr}\left( C^{-1} (C)_i' \right)
@@ -1080,7 +1098,7 @@ L_i = \left( (\boldsymbol{\mu})_i' \right)^T C^{-1} z
 \tag{5.90}
 \]
 
-\[
+\[\small
 U_i = \frac{1}{2} z^T C^{-1} (C)_i' C^{-1} z - \frac{1}{2} \operatorname{Tr}\left( C^{-1} (C)_i' \right)
 = \frac{1}{2} \left[ z^T C^{-1} (C)_i' C^{-1} z - \operatorname{Tr}\left( C^{-1} (C)_i' \right) \right]
 \tag{5.91}
@@ -1606,13 +1624,15 @@ A^T F (F^T F)^{-1}
 或者将其等价地写成：
 
 \[
-(F^T F - F^T A (A^T A)^{-1} A^T F)^{-1}
-=
+   \begin{aligned}
+& (F^T F - F^T A (A^T A)^{-1} A^T F)^{-1} \\
+=&
 (F^T F)^{-1}
 +
 (F^T F)^{-1} F^T A
 \left( A^T A - A^T F (F^T F)^{-1} F^T A \right)^{-1}
 A^T F (F^T F)^{-1}
+\end{aligned}
 \tag{5.143}
 \]
 

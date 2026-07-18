@@ -699,8 +699,10 @@ k(t, \omega) = \delta(\omega - \omega_0(t))
 **构造思路**：我们希望得到一个在时刻 \( t \) 处、频率为 \( \omega_0(t) \) 时有能量集中的分布。为此，考虑用差分来近似瞬时频率：
 
 \[
-\exp(j\phi'(x) \tau) \approx \exp\left(j \frac{\phi(x+\tau/2) - \phi(x-\tau/2)}{\tau} \cdot \tau\right)
-= \exp\left(j\phi(x+\tau/2)\right) \overline{\exp\left(j\phi(x-\tau/2)\right)}
+   \begin{aligned}
+\exp(j\phi'(x) \tau) & \approx \exp\left(j \frac{\phi(x+\tau/2) - \phi(x-\tau/2)}{\tau} \cdot \tau\right) \\
+& = \exp\left(j\phi(x+\tau/2)\right) \overline{\exp\left(j\phi(x-\tau/2)\right)}
+\end{aligned}
 \tag{7.58}
 \]
 
@@ -750,8 +752,10 @@ W_f(x, \omega) = \int_{-\infty}^{\infty} f\left(x + \frac{\tau}{2}\right) \overl
 做变量代换 \( \tau' = -\tau \)，则 \( \tau = -\tau' \)，\( d\tau = -d\tau' \)：
 
 \[
-= \int_{\infty}^{-\infty} \overline{f\left(x - \frac{\tau'}{2}\right)} f\left(x + \frac{\tau'}{2}\right) \exp(-j\omega \tau') \, (-d\tau')
-= \int_{-\infty}^{\infty} f\left(x + \frac{\tau'}{2}\right) \overline{f\left(x - \frac{\tau'}{2}\right)} \exp(-j\omega \tau') \, d\tau'
+   \begin{aligned}
+&= \int_{\infty}^{-\infty} \overline{f\left(x - \frac{\tau'}{2}\right)} f\left(x + \frac{\tau'}{2}\right) \exp(-j\omega \tau') \, (-d\tau') \\
+&= \int_{-\infty}^{\infty} f\left(x + \frac{\tau'}{2}\right) \overline{f\left(x - \frac{\tau'}{2}\right)} \exp(-j\omega \tau') \, d\tau'
+\end{aligned}
 \tag{7.63}
 \]
 
@@ -777,10 +781,12 @@ W_{\operatorname{M}_{\omega'} \operatorname{T}_{x'} f}(x, \omega) = W_f(x - x', 
 将调制平移后的信号代入WVD定义 (6.60)：
 
 \[
+   \begin{aligned}
 W_{\operatorname{M}_{\omega'} \operatorname{T}_{x'} f}(x, \omega)
-= \int_{-\infty}^{\infty} \left[ f\left(x + \frac{\tau}{2} - x'\right) \exp\left(j\omega'\left(x + \frac{\tau}{2}\right)\right) \right]
-\overline{\left[ f\left(x - \frac{\tau}{2} - x'\right) \exp\left(j\omega'\left(x - \frac{\tau}{2}\right)\right) \right]}
+= \int_{-\infty}^{\infty} & \left[ f\left(x + \frac{\tau}{2} - x'\right) \exp\left(j\omega'\left(x + \frac{\tau}{2}\right)\right) \right] \\
+& \overline{\left[ f\left(x - \frac{\tau}{2} - x'\right) \exp\left(j\omega'\left(x - \frac{\tau}{2}\right)\right) \right]}
 \exp(-j\omega \tau) \, d\tau
+\end{aligned}
 \tag{7.65}
 \]
 
@@ -818,9 +824,11 @@ W_{\operatorname{M}_{\omega'} \operatorname{T}_{x'} f}(x, \omega)
 令 \( u = x - x' \)，则上式变为：
 
 \[
-= \int_{-\infty}^{\infty} f\left(u + \frac{\tau}{2}\right) \overline{f\left(u - \frac{\tau}{2}\right)}
-\exp\left(-j(\omega - \omega') \tau\right) \, d\tau
-= W_f(u, \omega - \omega') = W_f(x - x', \omega - \omega')
+   \begin{aligned}
+&= \int_{-\infty}^{\infty} f\left(u + \frac{\tau}{2}\right) \overline{f\left(u - \frac{\tau}{2}\right)}
+\exp\left(-j(\omega - \omega') \tau\right) \, d\tau \\
+&= W_f(u, \omega - \omega') = W_f(x - x', \omega - \omega')
+\end{aligned}
 \tag{7.70}
 \]
 

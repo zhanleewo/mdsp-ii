@@ -1,6 +1,6 @@
 
 <div style="page-break-before: always; padding: 8% 8% 0 8%;">
- <h1 id="附录-1-粒子滤波" style="text-align: center; margin-bottom: 2rem; border-bottom: none; display: block;">附录 1：粒子滤波</h1> 
+ <h1 id="附录3-粒子滤波" style="text-align: center; margin-bottom: 2rem; border-bottom: none; display: block;">附录 3：粒子滤波</h1> 
  <div style="display: flex; align-items: center; justify-content: center; gap: 12px; margin: 1.8rem auto;">
   <span style="flex:1; max-width:80px; height:1px; background: linear-gradient(to right, transparent, #888);"></span>
   <span style="display:inline-block; width:6px; height:6px; background:#38bdf8; border-radius:50%;"></span>
@@ -8,7 +8,7 @@
  </div>
 </div>
 
-<!-- # 附录 1：粒子滤波 -->
+<!-- # 附录 3：粒子滤波 -->
 
 ## 1. 导言
 

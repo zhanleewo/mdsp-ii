@@ -528,8 +528,9 @@ X_2(t) &= s_1(t+T_1) + s_2(t+T_2) + \cdots + s_N(t+T_N) \\
 
 $$
 \begin{aligned}
-X_M(t) &= s_1(t+(M-1)T_1) + s_2(t+(M-1)T_2) + \cdots + s_N(t+(M-1)T_N) \\
-&= s_1(t)\exp(j 2\pi f (M-1)T_1) + s_2(t)\exp(j 2\pi f (M-1)T_2) + \cdots + s_N(t)\exp(j 2\pi f (M-1)T_N)
+X_M(t) =& s_1(t+(M-1)T_1) + s_2(t+(M-1)T_2) + \cdots + s_N(t+(M-1)T_N) \\
+=& s_1(t)\exp(j 2\pi f (M-1)T_1) + s_2(t)\exp(j 2\pi f (M-1)T_2) \\
+& + \cdots + s_N(t)\exp(j 2\pi f (M-1)T_N)
 \end{aligned}
 \tag{1.21} $$
 
@@ -560,6 +561,7 @@ s_N(t)
 将各信号源对应的方向矢量按列排列成矩阵，得到**方向矩阵（Steering Matrix）**：
 
 $$
+\small
 \mathbf{A}(\boldsymbol{\theta}) = 
 \begin{pmatrix}
 1 & 1 & \cdots & 1 \\
